@@ -1,0 +1,137 @@
+$ERROR_COLOUR: red;
+$DEFAULT_FONT: 'Fira Sans', sans-serif;
+$PAGE_WRAPPER_BORDER: 3px solid darkseagreen;
+$PAGE_WRAPPER_COLOUR: #F7FFFC;
+
+.App {
+    text-align: center;
+}
+
+body {
+    overflow: hidden;
+}
+
+
+
+.header {
+    border-bottom: $PAGE_WRAPPER_BORDER;
+    padding-top: 0.5em;
+    background: $PAGE_WRAPPER_COLOUR;
+
+    h1 {
+        font-family: $DEFAULT_FONT;
+        font-size: 1.55em;
+    }
+}
+
+.footer {
+    //border-top: $PAGE_WRAPPER_BORDER;
+    background: $PAGE_WRAPPER_COLOUR;
+    font-family: $DEFAULT_FONT;
+    font-size: 0.75em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    padding: 0.5em;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.has-error { border: 1px solid $ERROR_COLOUR; }
+
+.content {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .main_text {
+        font-family: $DEFAULT_FONT;
+        font-weight: 500;
+        font-size: xx-large;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .secondary_text {
+        font-family: $DEFAULT_FONT;
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 1em;
+    }
+
+    .control {
+        font-family: $DEFAULT_FONT;
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 1em;
+    }
+}
+
+.modal_outer {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    .modal_inner {
+        padding-top: 1.5rem;
+        background-color: white;
+        border: 2px solid slategrey;
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 400px;
+        top: 50%;
+        transform: perspective(1px) translateY(-50%);
+        left: 0;
+        right: 0;
+        position: absolute;
+
+        form {
+            padding: 1.5rem;
+        }
+
+        .form-spacer {
+            height: 1.875rem;
+        }
+
+        .modal-label {
+            margin-bottom: 0;
+        }
+
+        .error-block {
+            color: $ERROR_COLOUR;
+            font-size: small;
+        }
+
+        .be-error {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .close {
+            top: -25px;
+            right: 5px;
+            position: relative;
+        }
+    }
+}
+
+.success {
+    padding: 1.5rem;
+}
+

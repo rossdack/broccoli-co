@@ -41,6 +41,12 @@ class ModalGizmo extends Component {
             },
             {
                 field: 'confirmEmail',
+                method: 'isEmail',
+                validWhen: true,
+                message: '* That is not a valid email.'
+            },
+            {
+                field: 'confirmEmail',
                 method: this.emailMatch,
                 validWhen: true,
                 message: '* Email and email confirmation do not match.'
@@ -61,7 +67,7 @@ class ModalGizmo extends Component {
     }
 
     maxLength = (name) => (name.length >= 3);
-    emailMatch = (confirmation, state) => (state.email === confirmation);
+    emailMatch = (confirmEmail, state) => (confirmEmail === state.email);
 
     handleInputChange = event => {
         event.preventDefault();
@@ -178,14 +184,13 @@ class ModalGizmo extends Component {
                                                 address</label>
                                             <input name='confirmEmail' placeholder='Confirm email'
                                                    disabled={this.state.submitted}
-                                                   className={validation.email.isInvalid ? 'form-control has-error' : 'form-control'}
+                                                   className={validation.confirmEmail.isInvalid ? 'form-control has-error' : 'form-control'}
                                                    onChange={this.handleInputChange}/>
                                             <span className='error-block'>{validation.confirmEmail.message}</span>
                                         </div>
                                     </div>
 
                                     <div className="form-spacer"/>
-
 
                                     <div>
                                         <button name='sendDetails'

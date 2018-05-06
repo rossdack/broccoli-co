@@ -14,5 +14,5 @@ npm start
 
 ## To test (jest)
 ```sh
-npm test
+npm run test
 ``` 

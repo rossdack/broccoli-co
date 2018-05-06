@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 class Success extends Component {
 
     render() {
-        console.log(this.props);
         return (
             <div>
                 <h3>All done!</h3>

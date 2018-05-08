@@ -2,6 +2,7 @@ $ERROR_COLOUR: red;
 $DEFAULT_FONT: 'Fira Sans', sans-serif;
 $PAGE_WRAPPER_BORDER: 3px solid darkseagreen;
 $PAGE_WRAPPER_COLOUR: #F7FFFC;
+$FADE_DURATION: 0.5s;
 
 .App {
     text-align: center;
@@ -10,8 +11,6 @@ $PAGE_WRAPPER_COLOUR: #F7FFFC;
 body {
     overflow: hidden;
 }
-
-
 
 .header {
     border-bottom: $PAGE_WRAPPER_BORDER;
@@ -72,6 +71,7 @@ body {
 }
 
 .modal_outer {
+    animation: fadein $FADE_DURATION;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -84,6 +84,11 @@ body {
 
     h3 {
         font-size: 1.1rem;
+    }
+
+    @keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
     }
 
     .modal_inner {
